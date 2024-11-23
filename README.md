@@ -1,10 +1,10 @@
-# Graphiti
+# Spider Web
 
 > A web framework to create GraphQL APIs with Fastify and Mercurius, in a modular and way, with IoC and DI containers to resolve dependencies.
 
 ## About
 
-Graphiti is designed to simplify the creation of GraphQL APIs by leveraging the power of Fastify and Mercurius. It promotes a modular architecture, making it easier to manage and scale your application. With built-in Inversion of Control (IoC) and Dependency Injection (DI) containers, Graphiti ensures that your dependencies are resolved efficiently and cleanly, leading to more maintainable and testable code. Whether you're building a small project or a large-scale application, Graphiti provides the tools and structure needed to develop robust and performant GraphQL APIs.
+Spider Web is designed to simplify the creation of GraphQL APIs by leveraging the power of Fastify and Mercurius. It promotes a modular architecture, making it easier to manage and scale your application. With built-in Inversion of Control (IoC) and Dependency Injection (DI) containers, Spider Web ensures that your dependencies are resolved efficiently and cleanly, leading to more maintainable and testable code. Whether you're building a small project or a large-scale application, Spider Web provides the tools and structure needed to develop robust and performant GraphQL APIs.
 
 ## How to use
 
@@ -14,23 +14,23 @@ Graphiti is designed to simplify the creation of GraphQL APIs by leveraging the 
 
 ```typescript
 // auth.module.ts
-import { Injectable, Query, Mutation, Resolver, Module } from "./decorators";
+import { Injectable, Query, Mutation, Resolver, Module } from './decorators'
 
 @Injectable()
 class AuthService {
   signIn() {
-    return true;
+    return true
   }
 
   signOut() {
-    return true;
+    return true
   }
 
   register() {
     return {
       id: 1,
-      name: "Alice",
-    };
+      name: 'Alice'
+    }
   }
 }
 
@@ -40,17 +40,17 @@ export class AuthResolver {
 
   @Query()
   signIn() {
-    return this.authService.signIn();
+    return this.authService.signIn()
   }
 
   @Mutation()
   signOut() {
-    return this.authService.signOut();
+    return this.authService.signOut()
   }
 
   @Mutation()
   register() {
-    return this.authService.register();
+    return this.authService.register()
   }
 }
 
@@ -71,7 +71,7 @@ export class AuthResolver {
     }
   `,
   providers: [AuthService],
-  resolvers: [AuthResolver],
+  resolvers: [AuthResolver]
 })
 export class AuthModule {}
 ```
@@ -80,12 +80,12 @@ export class AuthModule {}
 
 ```typescript
 // app.module.ts
-import { Module } from "./decorators";
-import { AuthModule } from "./auth.module";
-import { UsersModule } from "./user.module";
+import { Module } from './decorators'
+import { AuthModule } from './auth.module'
+import { UsersModule } from './user.module'
 
 @Module({
-  imports: [UsersModule, AuthModule],
+  imports: [UsersModule, AuthModule]
 })
 export class AppModule {}
 ```
@@ -94,34 +94,34 @@ export class AppModule {}
 
 ```typescript
 // index.ts
-import Fastify from "fastify";
-import mercurius from "mercurius";
-import { create } from "./container";
-import { AppModule } from "./app.module";
+import Fastify from 'fastify'
+import mercurius from 'mercurius'
+import { create } from './container'
+import { AppModule } from './app.module'
 
 async function startup() {
-  const app = await create(AppModule);
-  const fastify = Fastify();
+  const app = await create(AppModule)
+  const fastify = Fastify()
 
-  app.setServer(fastify);
+  app.setServer(fastify)
 
   app.use(async ({ server, graphqlContext }) => {
     server.register(mercurius, {
       ...graphqlContext,
-      graphiql: true,
-    });
-  });
+      graphiql: true
+    })
+  })
 
   app.use(async () => {
-    fastify.get("/", async () => {
-      return { message: "Hello from Fastify!" };
-    });
-  });
+    fastify.get('/', async () => {
+      return { message: 'Hello from Fastify!' }
+    })
+  })
 
-  await app.listen(5000);
+  await app.listen(5000)
 }
 
-startup();
+startup()
 ```
 
 Now you have a running GraphQL API with Fastify and Mercurius using a modular architecture.
