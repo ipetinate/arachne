@@ -1,0 +1,36 @@
+{
+  "name": "graphiti-web-framework",
+  "version": "0.0.1",
+  "description": "A web framework focused on modularization",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --env-file=.env --watch -r ts-node/register src/index.ts",
+    "test": "vitest"
+  },
+  "keywords": [
+    "framework",
+    "web",
+    "modules",
+    "api",
+    "graphql",
+    "fastify"
+  ],
+  "author": "Isac Petinate <idpetinate@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/merge": "^9.0.9",
+    "fastify": "^5.1.0",
+    "graphql": "^16.9.0",
+    "mercurius": "^15.1.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "@vitest/coverage-v8": "^2.1.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  }
+}

@@ -1,0 +1,12 @@
+# Folders
+
+dist
+build
+node_modules
+coverage
+.idea
+
+
+# Files
+
+.env
