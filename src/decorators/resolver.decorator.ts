@@ -25,7 +25,9 @@ export function Resolver(
 
 function getQueryMethods(target: any): any[] {
   const queryMethods = Object.getOwnPropertyNames(target.prototype)
-    .filter((method) => method.startsWith('get') || method === 'find')
+    .filter((method) =>
+      Reflect.getMetadata('graphql:queries', target.prototype, method)
+    )
     .map((method) => ({
       name: method,
       method: target.prototype[method]
@@ -36,8 +38,8 @@ function getQueryMethods(target: any): any[] {
 
 function getMutationMethods(target: any): any[] {
   const mutationMethods = Object.getOwnPropertyNames(target.prototype)
-    .filter(
-      (method) => method.startsWith('create') || method.startsWith('update')
+    .filter((method) =>
+      Reflect.getMetadata('graphql:mutations', target.prototype, method)
     )
     .map((method) => ({
       name: method,
