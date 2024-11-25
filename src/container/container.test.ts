@@ -109,7 +109,7 @@ describe('Container', () => {
       }
 
       @Query()
-      testQuery(): string {
+      findQuery(): string {
         return 'test query return'
       }
     }
@@ -127,7 +127,9 @@ describe('Container', () => {
     const graphQLData = IoCContainer.collectGraphQL()
 
     expect(graphQLData.schema).toContain('type Query { test: String }')
-    expect(graphQLData.resolvers.Query.testQuery()).toBe('test query return')
+    expect(await graphQLData.resolvers.Query.findQuery()).toBe(
+      'test query return'
+    )
   })
 
   it('should create an AppBuilder instance', async () => {
