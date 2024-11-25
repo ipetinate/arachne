@@ -16,6 +16,11 @@ jobs:
         with:
           token: ${{ secrets.ADMIN_TOKEN }}
 
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
       - name: Attest
         uses: actions/attest-build-provenance@v1
         with:
@@ -33,7 +38,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          npm ci
-          npm run build
-          npx auto shipit
+        run: npx auto shipit
