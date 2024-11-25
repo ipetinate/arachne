@@ -1,7 +1,7 @@
 {
-  "name": "@spiderweb/core",
+  "name": "@arachne/core",
   "version": "0.1.0",
-  "description": "A web framework focused on modularization",
+  "description": "A web framework focused on modularization for web apis focused on GraphQL and Fastify compatibility.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
@@ -28,13 +28,6 @@
   ],
   "author": "Isac Petinate <idpetinate@gmail.com>",
   "license": "ISC",
-  "dependencies": {
-    "@graphql-tools/merge": "^9.0.9",
-    "fastify": "^5.1.0",
-    "graphql": "^16.9.0",
-    "mercurius": "^15.1.0",
-    "reflect-metadata": "^0.2.2"
-  },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-commonjs": "^28.0.1",
@@ -49,5 +42,11 @@
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
     "vitest": "^2.1.5"
+  },
+  "peerDependencies": {
+    "fastify": "^5.1.0",
+    "graphql": "^16.9.0",
+    "mercurius": "^15.1.0",
+    "reflect-metadata": "^0.2.2"
   }
 }
