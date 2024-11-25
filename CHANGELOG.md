@@ -1,3 +1,15 @@
+# v0.2.0 (Mon Nov 25 2024)
+
+#### 🚀 Enhancement
+
+- fix: update readme with dev alert and api changes [#2](https://github.com/ipetinate/arachne/pull/2) ([@ipetinate](https://github.com/ipetinate))
+
+#### Authors: 1
+
+- Isac Petinate ([@ipetinate](https://github.com/ipetinate))
+
+---
+
 # v0.1.2 (Mon Nov 25 2024)
 
 #### 🐛 Bug Fix
