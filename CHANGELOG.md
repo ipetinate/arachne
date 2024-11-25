@@ -1,3 +1,15 @@
+# v0.1.2 (Mon Nov 25 2024)
+
+#### 🐛 Bug Fix
+
+- chore: update license to MIT [#1](https://github.com/ipetinate/arachne/pull/1) ([@ipetinate](https://github.com/ipetinate))
+
+#### Authors: 1
+
+- Isac Petinate ([@ipetinate](https://github.com/ipetinate))
+
+---
+
 # v0.1.1 (Mon Nov 25 2024)
 
 #### ⚠️ Pushed to `main`
