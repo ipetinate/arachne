@@ -30,8 +30,8 @@
     "graphql",
     "fastify"
   ],
-  "author": "Isac Petinate <idpetinate@gmail.com>",
-  "license": "ISC",
+  "author": "Isac Petinate",
+  "license": "MIT",
   "dependencies": {
     "fastify": "^5.1.0",
     "graphql": "^16.9.0",
