@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 
-import { create, IoCContainer } from '@/container'
+import { createApp, IoCContainer } from '@/container'
 import { Query, Module, Resolver, Injectable } from '@/decorators'
 
 describe('Query Decorator', () => {
@@ -117,7 +117,7 @@ describe('Query Decorator', () => {
     @Module({ providers: [TestService], resolvers: [TestResolver] })
     class TestModule {}
 
-    await create(TestModule)
+    await createApp(TestModule)
 
     const resolverInstance = IoCContainer.resolve<TestResolver>(TestResolver)
     const queries = Reflect.getMetadata('graphql:queries', resolverInstance)

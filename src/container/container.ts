@@ -164,7 +164,7 @@ export class Container {
 
 export const IoCContainer = new Container()
 
-export async function create(moduleClass: any): Promise<AppBuilder> {
+export async function createApp(moduleClass: any): Promise<AppBuilder> {
   IoCContainer.loadModule(moduleClass)
 
   return new AppBuilder(IoCContainer)

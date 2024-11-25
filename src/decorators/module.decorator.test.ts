@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 
-import { create, IoCContainer } from '@/container'
+import { createApp, IoCContainer } from '@/container'
 import { Injectable, Module, Resolver } from '@/decorators'
 
 describe('Module Decorator', () => {
@@ -116,7 +116,7 @@ describe('Module Decorator', () => {
     @Module({ providers: [TestProvider], resolvers: [TestResolver] })
     class TestModule {}
 
-    await create(TestModule)
+    await createApp(TestModule)
 
     const provider = IoCContainer.resolve(TestProvider)
     const resolver = IoCContainer.resolve(TestResolver)

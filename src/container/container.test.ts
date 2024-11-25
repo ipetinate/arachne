@@ -2,7 +2,7 @@ import 'reflect-metadata'
 
 import { ModuleMetadata } from '@/models'
 import { Module, Mutation, Query, Resolver } from '@/decorators'
-import { AppBuilder, Container, create, IoCContainer } from '@/container'
+import { AppBuilder, Container, createApp, IoCContainer } from '@/container'
 
 describe('Container', () => {
   let container: Container
@@ -122,7 +122,7 @@ describe('Container', () => {
     @Module(moduleMetadata)
     class TestModule {}
 
-    await create(TestModule)
+    await createApp(TestModule)
 
     const graphQLData = IoCContainer.collectGraphQL()
 
@@ -136,7 +136,7 @@ describe('Container', () => {
     class TestModule {}
     Reflect.defineMetadata('module:options', {}, TestModule)
 
-    const appBuilder = await create(TestModule)
+    const appBuilder = await createApp(TestModule)
 
     expect(appBuilder).toBeInstanceOf(AppBuilder)
   })
