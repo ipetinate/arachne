@@ -1,11 +1,11 @@
-<p align="center">
+<!-- <p align="center">
   <img
-    src="https://raw.githubusercontent.com/ipetinate/spider-web/main/docs/img/spider-web-logo.webp"
-    alt="Spider Web Framework logo" width="128"  style="display: block; margin: 0 auto;"
+    src="https://raw.githubusercontent.com/ipetinate/arachne/main/docs/img/arachne-logo.webp"
+    alt="Arachne Framework logo" width="128"  style="display: block; margin: 0 auto;"
     />
-</p>
+</p> -->
 
-# Spider Web | Official Pull Request
+# Arachne | Official Pull Request
 
 > Fill in the fields appropriately so that empire reviewers can validate your work.
 
