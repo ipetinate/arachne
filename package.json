@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "dev": "node --env-file=.env --watch -r ts-node/register src/index.ts",
     "start": "node --env-file=.env dist/index.js",
-    "test": "vitest"
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [
     "framework",
