@@ -1,3 +1,5 @@
+import 'reflect-metadata'
+
 import { IoCContainer } from '@/container'
 import { DecoratorProperties } from '@/models/decorators'
 

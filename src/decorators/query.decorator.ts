@@ -1,3 +1,5 @@
+import 'reflect-metadata'
+
 export function Query(): MethodDecorator {
   return (target, propertyKey, descriptor) => {
     const queries = Reflect.getMetadata('graphql:queries', target) || []

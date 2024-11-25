@@ -1,3 +1,5 @@
+import 'reflect-metadata'
+
 import { ModuleMetadata } from '@/models/decorators'
 
 export function Module(options: ModuleMetadata): ClassDecorator {
