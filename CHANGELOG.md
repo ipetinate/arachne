@@ -1,3 +1,19 @@
+# v0.2.1 (Mon Nov 25 2024)
+
+#### 🐛 Bug Fix
+
+- docs: add coverage badge to README and update package.json file paths [#3](https://github.com/ipetinate/arachne/pull/3) ([@ipetinate](https://github.com/ipetinate))
+
+#### ⚠️ Pushed to `main`
+
+- chore: update license in package-lock.json and bump @types/node version ([@ipetinate](https://github.com/ipetinate))
+
+#### Authors: 1
+
+- Isac Petinate ([@ipetinate](https://github.com/ipetinate))
+
+---
+
 # v0.2.0 (Mon Nov 25 2024)
 
 #### 🚀 Enhancement
