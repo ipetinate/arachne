@@ -12,13 +12,21 @@ Arachne is designed to simplify the creation of GraphQL APIs by leveraging the p
 
 ## How to use
 
+### Installation
+
+1. Install `@arachne/core`, `fastify`, `mercurius` and `graphql` packages
+
+```bash
+npm i @arachne/core fastify mercurius graphql
+```
+
 ### Usage
 
 1. **Create Modules**: Define your modules with services and resolvers.
 
 ```typescript
 // auth.module.ts
-import { Injectable, Query, Mutation, Resolver, Module } from './decorators'
+import { Injectable, Query, Mutation, Resolver, Module } from '@arachne/core'
 
 @Injectable()
 class AuthService {
@@ -59,7 +67,7 @@ export class AuthResolver {
 }
 
 @Module({
-  schema: gql`
+  schema: `
     type Query {
       signIn: Boolean
     }
@@ -84,9 +92,10 @@ export class AuthModule {}
 
 ```typescript
 // app.module.ts
-import { Module } from './decorators'
-import { AuthModule } from './auth.module'
-import { UsersModule } from './user.module'
+import { Module } from '@arachne/core'
+
+import { AuthModule } from '@/modules/auth/auth.module'
+import { UsersModule } from '@/modules/users/users.module'
 
 @Module({
   imports: [UsersModule, AuthModule]
@@ -99,33 +108,32 @@ export class AppModule {}
 ```typescript
 // index.ts
 import Fastify from 'fastify'
-import mercurius from 'mercurius'
-import { create } from './container'
-import { AppModule } from './app.module'
+import mercurius, { MercuriusOptions } from 'mercurius'
 
-async function startup() {
-  const app = await create(AppModule)
+import { createApp } from '@arachne/core'
+
+import { AppModule } from '@/app/app.module'
+
+async function startupServer() {
   const fastify = Fastify()
+
+  const app = await createApp(AppModule)
 
   app.setServer(fastify)
 
   app.use(async ({ server, graphqlContext }) => {
     server.register(mercurius, {
       ...graphqlContext,
-      graphiql: true
-    })
-  })
-
-  app.use(async () => {
-    fastify.get('/', async () => {
-      return { message: 'Hello from Fastify!' }
-    })
+      graphiql: true,
+      path: '/api/graphql', // To access http://localhost:5000/api/graphql to consume data
+      allowBatchedQueries: true
+    } as MercuriusOptions)
   })
 
   await app.listen(5000)
 }
 
-startup()
+startupServer()
 ```
 
 Now you have a running GraphQL API with Fastify and Mercurius using a modular architecture.
@@ -148,6 +156,6 @@ Now you have a running GraphQL API with Fastify and Mercurius using a modular ar
 
 3. Once the server is running, you can access the GraphiQL playground (if enabled) by navigating to:
    ```bash
-   http://localhost:PORT/graphiql
+   http://localhost:PORT/graphiql # or path passed on mercurius config
    ```
    Replace `PORT` with the actual port number your server is configured to use.
