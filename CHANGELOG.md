@@ -1,3 +1,15 @@
+# v0.2.2 (Mon Nov 25 2024)
+
+#### 🐛 Bug Fix
+
+- feat: add attestations permission and implement build provenance attestation in release workflow [#4](https://github.com/ipetinate/arachne/pull/4) ([@ipetinate](https://github.com/ipetinate))
+
+#### Authors: 1
+
+- Isac Petinate ([@ipetinate](https://github.com/ipetinate))
+
+---
+
 # v0.2.1 (Mon Nov 25 2024)
 
 #### 🐛 Bug Fix
