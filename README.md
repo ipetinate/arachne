@@ -1,12 +1,12 @@
 [![Build CI](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml/badge.svg)](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml)
 
-# Spider Web
+# Arachne
 
 > A web framework to create GraphQL APIs with Fastify and Mercurius, in a modular and way, with IoC and DI containers to resolve dependencies.
 
 ## About
 
-Spider Web is designed to simplify the creation of GraphQL APIs by leveraging the power of Fastify and Mercurius. It promotes a modular architecture, making it easier to manage and scale your application. With built-in Inversion of Control (IoC) and Dependency Injection (DI) containers, Spider Web ensures that your dependencies are resolved efficiently and cleanly, leading to more maintainable and testable code. Whether you're building a small project or a large-scale application, Spider Web provides the tools and structure needed to develop robust and performant GraphQL APIs.
+Arachne is designed to simplify the creation of GraphQL APIs by leveraging the power of Fastify and Mercurius. It promotes a modular architecture, making it easier to manage and scale your application. With built-in Inversion of Control (IoC) and Dependency Injection (DI) containers, Arachne ensures that your dependencies are resolved efficiently and cleanly, leading to more maintainable and testable code. Whether you're building a small project or a large-scale application, Arachne provides the tools and structure needed to develop robust and performant GraphQL APIs.
 
 ## How to use
 
