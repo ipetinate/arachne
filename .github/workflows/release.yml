@@ -18,24 +18,16 @@ jobs:
       - name: Prepare repository
         run: git fetch --unshallow --tags
 
-      - name: Use Node.js 20.11.1
+      - name: Use Node.js 20.11.0
         uses: actions/setup-node@v1
         with:
-          node-version: 20.11.1
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: yarn-deps-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-deps-${{ hashFiles('yarn.lock') }}
+          node-version: 20.11.0
 
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          yarn install --frozen-lockfile
-          yarn build
+          npm ci
+          npm run build
           npx auto shipit
