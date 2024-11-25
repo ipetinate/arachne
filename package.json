@@ -13,6 +13,11 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "framework",
     "web",
