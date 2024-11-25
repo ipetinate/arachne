@@ -1,4 +1,4 @@
-import { AppBuilder } from '@/container'
+import { AppBuilder } from '@/container/app-builder'
 import { ModuleMetadata, ServiceScope } from '@/models'
 
 export class Container {
@@ -60,7 +60,6 @@ export class Container {
       const key =
         Reflect.getMetadata('serviceKey', provider) || Symbol(provider.name)
 
-      // Registrar todos os providers no container antes de coletar os resolvers
       if (!this.services.has(key)) {
         const scope =
           Reflect.getMetadata('serviceScope', provider) || 'singleton'
@@ -85,7 +84,6 @@ export class Container {
       }
     })
 
-    // Agora garantimos que os resolvers do próprio módulo sejam registrados
     if (options.resolvers) {
       options.resolvers.forEach((resolver: any) => {
         const instance = this.resolve(resolver)
@@ -104,7 +102,27 @@ export class Container {
     const mutationResolvers =
       Reflect.getMetadata('graphql:mutations', resolverInstance) || []
 
-    const resolvers: any = { Mutation: {} }
+    const queryResolvers =
+      Reflect.getMetadata('graphql:queries', resolverInstance) || []
+
+    const resolvers: any = { Query: {}, Mutation: {} }
+
+    queryResolvers.forEach((query: any) => {
+      resolvers.Query[query.name] = async (...args: any[]) => {
+        const hasArgsDecorator = Reflect.getMetadata(
+          'args',
+          resolverInstance,
+          query.name
+        )
+
+        if (hasArgsDecorator) {
+          const [_, argsData] = args
+          return query.method.apply(resolverInstance, [argsData])
+        }
+
+        return query.method.apply(resolverInstance, args)
+      }
+    })
 
     mutationResolvers.forEach((mutation: any) => {
       resolvers.Mutation[mutation.name] = async (...args: any[]) => {
@@ -119,7 +137,6 @@ export class Container {
           return mutation.method.apply(resolverInstance, [argsData])
         }
 
-        // Caso não tenha o decorator, passa os parâmetros normalmente
         return mutation.method.apply(resolverInstance, args)
       }
     })
