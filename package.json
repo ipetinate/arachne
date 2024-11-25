@@ -2,10 +2,15 @@
   "name": "@arachne/core",
   "version": "0.2.0",
   "description": "A web framework focused on modularization for web apis focused on GraphQL and Fastify compatibility.",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "rollup -c",
     "dev": "node --env-file=.env --watch -r ts-node/register src/index.ts",

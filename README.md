@@ -1,4 +1,4 @@
-[![Build CI](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml/badge.svg)](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml)
+[![Build CI](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml/badge.svg)](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml) [![Coverage Status](https://coveralls.io/repos/github/ipetinate/arachne/badge.svg?branch=main)](https://coveralls.io/github/ipetinate/arachne?branch=main)
 
 # Arachne
 
