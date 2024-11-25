@@ -1,5 +1,5 @@
 import { AppBuilder } from '@/container'
-import { ModuleMetadata, ServiceScope } from '@/models/decorators'
+import { ModuleMetadata, ServiceScope } from '@/models'
 
 export class Container {
   private graphQLResolvers: any[] = []

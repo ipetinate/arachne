@@ -1,5 +1,5 @@
 import { Container } from '@/container'
-import { Middleware } from '@/models/app-builder'
+import { Middleware } from '@/models'
 
 import { mergeSchema } from '@/utils/merge-schema'
 

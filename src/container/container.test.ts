@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 
-import { ModuleMetadata } from '@/models/decorators'
+import { ModuleMetadata } from '@/models'
 import { Module, Mutation, Query, Resolver } from '@/decorators'
 import { AppBuilder, Container, create, IoCContainer } from '@/container'
 

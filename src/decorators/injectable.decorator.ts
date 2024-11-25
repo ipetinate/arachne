@@ -1,6 +1,6 @@
 import 'reflect-metadata'
 
-import { DecoratorProperties } from '@/models/decorators'
+import { DecoratorProperties } from '@/models'
 
 export function Injectable(
   { scope }: DecoratorProperties = { scope: 'singleton' }

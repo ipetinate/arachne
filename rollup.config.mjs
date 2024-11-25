@@ -21,7 +21,12 @@ export default {
     json(),
     commonjs(),
     alias({
-      entries: [{ find: '@', replacement: path.resolve(__dirname, 'src') }]
+      entries: [
+        {
+          find: '@',
+          replacement: path.resolve(__dirname, 'src')
+        }
+      ]
     }),
     resolve({
       preferBuiltins: true
@@ -30,9 +35,5 @@ export default {
       tsconfig: './tsconfig.json',
       declaration: true
     })
-  ],
-  onwarn(warning, warn) {
-    if (warning.code === 'CIRCULAR_DEPENDENCY') return
-    warn(warning)
-  }
+  ]
 }

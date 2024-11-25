@@ -1,6 +1,6 @@
 import { Resolver } from '@/decorators'
 import { IoCContainer } from '@/container'
-import { ServiceScope } from '@/models/decorators'
+import { ServiceScope } from '@/models'
 
 describe('Resolver Decorator', () => {
   it('should define metadata and register the target in IoCContainer', () => {
