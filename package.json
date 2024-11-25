@@ -1,5 +1,5 @@
 {
-  "name": "spider-web",
+  "name": "@spiderweb/core",
   "version": "0.1.0",
   "description": "A web framework focused on modularization",
   "main": "dist/index.cjs.js",
