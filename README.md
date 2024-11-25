@@ -1,3 +1,5 @@
+[![Build CI](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml/badge.svg)](https://github.com/ipetinate/spider-web/actions/workflows/node.js.yml)
+
 # Spider Web
 
 > A web framework to create GraphQL APIs with Fastify and Mercurius, in a modular and way, with IoC and DI containers to resolve dependencies.
