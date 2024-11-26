@@ -1,3 +1,15 @@
+# v0.3.1 (Tue Nov 26 2024)
+
+#### 🐛 Bug Fix
+
+- chore: update .gitignore to exclude Rollup files and add reflect-meta… [#7](https://github.com/ipetinate/arachne/pull/7) ([@ipetinate](https://github.com/ipetinate))
+
+#### Authors: 1
+
+- Isac Petinate ([@ipetinate](https://github.com/ipetinate))
+
+---
+
 # v0.3.0 (Tue Nov 26 2024)
 
 #### 🚀 Enhancement
