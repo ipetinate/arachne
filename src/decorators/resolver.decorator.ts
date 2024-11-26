@@ -1,7 +1,6 @@
 import 'reflect-metadata'
-
-import { IoCContainer } from '@/container'
-import { DecoratorProperties } from '@/models'
+import { DecoratorProperties } from '../models/decorators'
+import { IoCContainer } from '../container/container'
 
 export function Resolver(
   { scope }: DecoratorProperties = { scope: 'singleton' }

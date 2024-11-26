@@ -1,7 +1,10 @@
 import 'reflect-metadata'
 
-import { createApp, IoCContainer } from '@/container'
-import { Injectable, Module, Resolver } from '@/decorators'
+import { Module } from './module.decorator'
+import { Resolver } from './resolver.decorator'
+import { Injectable } from './injectable.decorator'
+
+import { createApp, IoCContainer } from '../container/container'
 
 describe('Module Decorator', () => {
   it('should define module options metadata on the target', () => {

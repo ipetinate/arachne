@@ -1,8 +1,11 @@
 import 'reflect-metadata'
-
-import { ModuleMetadata } from '@/models'
-import { Module, Mutation, Query, Resolver } from '@/decorators'
-import { AppBuilder, Container, createApp, IoCContainer } from '@/container'
+import { Container, createApp, IoCContainer } from './container'
+import { ModuleMetadata } from '../models/decorators'
+import { Resolver } from '../decorators/resolver.decorator'
+import { Mutation } from '../decorators/mutation.decorator'
+import { Query } from '../decorators/query.decorator'
+import { Module } from '../decorators/module.decorator'
+import { AppBuilder } from './app-builder'
 
 describe('Container', () => {
   let container: Container

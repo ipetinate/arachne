@@ -1,4 +1,4 @@
-import { mergeSchema } from '@/utils'
+import { mergeSchema } from './merge-schema'
 
 describe('mergeSchema', () => {
   test('should merge schemas correctly', () => {
