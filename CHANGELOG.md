@@ -1,3 +1,15 @@
+# v0.3.0 (Tue Nov 26 2024)
+
+#### 🚀 Enhancement
+
+- refactor: change to commomjs module system [#6](https://github.com/ipetinate/arachne/pull/6) ([@ipetinate](https://github.com/ipetinate))
+
+#### Authors: 1
+
+- Isac Petinate ([@ipetinate](https://github.com/ipetinate))
+
+---
+
 # v0.2.3 (Mon Nov 25 2024)
 
 #### 🐛 Bug Fix
