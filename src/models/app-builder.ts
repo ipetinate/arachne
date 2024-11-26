@@ -1,4 +1,4 @@
-import { Container } from '@/container'
+import { Container } from '../container/container'
 
 export interface GraphQLContext {
   resolvers: any

@@ -2,18 +2,25 @@
   "name": "@arachne/core",
   "version": "0.2.3",
   "description": "A web framework focused on modularization for web apis focused on GraphQL and Fastify compatibility.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "dev": "node --env-file=.env --watch -r ts-node/register src/index.ts",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:bundle": "esbuild src/index.ts --bundle --platform=node --outdir=dist --format=esm",
+    "build": "npm run build:types && npm run build:bundle",
+    "dev": "node --env-file=.env --watch -r ts-node/register src/server.ts",
     "start": "node --env-file=.env dist/index.js",
     "test": "vitest",
     "test:coverage": "vitest --coverage"
@@ -44,16 +51,10 @@
     "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
-    "@rollup/plugin-alias": "^5.1.1",
-    "@rollup/plugin-commonjs": "^28.0.1",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.3.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.1",
     "@types/node": "^22.9.3",
     "@vitest/coverage-v8": "^2.1.5",
     "auto": "^11.3.0",
-    "rollup": "^4.27.4",
+    "esbuild": "^0.24.0",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "tslib": "^2.8.1",

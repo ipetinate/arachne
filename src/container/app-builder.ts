@@ -1,7 +1,6 @@
-import { Container } from '@/container'
-import { Middleware } from '@/models'
-
-import { mergeSchema } from '@/utils/merge-schema'
+import { Middleware } from '../models/app-builder'
+import { mergeSchema } from '../utils/merge-schema'
+import { Container } from './container'
 
 export class AppBuilder {
   private middlewares: Middleware[] = []

@@ -1,7 +1,10 @@
 import 'reflect-metadata'
 
-import { createApp, IoCContainer } from '@/container'
-import { Mutation, Module, Resolver, Injectable } from '@/decorators'
+import { createApp, IoCContainer } from '../container/container'
+import { Injectable } from './injectable.decorator'
+import { Mutation } from './mutation.decorator'
+import { Resolver } from './resolver.decorator'
+import { Module } from './module.decorator'
 
 describe('Mutation Decorator', () => {
   let target: any

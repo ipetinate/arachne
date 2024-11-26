@@ -1,6 +1,6 @@
-import { Container } from '@/container'
-import { AppBuilder } from '@/container'
-import { Middleware } from '@/models'
+import { AppBuilder } from './app-builder'
+import { Container } from './container'
+import { Middleware } from '../models/app-builder'
 
 describe('AppBuilder', () => {
   let container: Container

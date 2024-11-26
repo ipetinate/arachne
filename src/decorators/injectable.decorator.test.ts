@@ -1,7 +1,8 @@
 import 'reflect-metadata'
 
-import { createApp, IoCContainer } from '@/container'
-import { Injectable, Module } from '@/decorators'
+import { Injectable } from './injectable.decorator'
+import { Module } from './module.decorator'
+import { createApp, IoCContainer } from '../container/container'
 
 describe('Injectable Decorator', () => {
   test('should define metadata for serviceKey and serviceScope', () => {
