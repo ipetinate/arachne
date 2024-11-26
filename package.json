@@ -1,6 +1,6 @@
 {
   "name": "@arachne/core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A web framework focused on modularization for web apis focused on GraphQL and Fastify compatibility.",
   "type": "module",
   "main": "./dist/index.js",
